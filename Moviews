@@ -1,0 +1,53 @@
+public class MovieController : ApiController  
+{
+  
+    [Route("movies/all")]
+    public IHttpActionResult All()
+    {
+        List<Movie> movies = new List<Movie>()
+        {
+            new Movie()
+            {
+                Id = 1,
+                Title = "Pirates Of The Carribean",
+                ReleaseDate = new DateTime(2003,7,9),
+                RunningTimeMinutes = 143, 
+				Actor = "Johnny Depp"
+            },
+            new Movie()
+            {
+                Id = 2,
+                Title = "Aladdin",
+                ReleaseDate = new DateTime(1992, 11, 25),
+                RunningTimeMinutes = 90,
+				Actor = "Robin Williams"
+            },
+            new Movie()
+            {
+                Id = 3,
+                Title = "Wedding Crashers",
+                ReleaseDate = new DateTime(2005, 7, 15),
+                RunningTimeMinutes = 119,
+				Actor = "Vince Vaughn"
+            },
+			new Movie()
+		    {
+				ID = 4,
+				Title = "Ride Along",
+				ReleaseDate = new DateTime (2014, 1, 17)
+				RunningTimeMinutes = 99,
+				Actor = "Ice Cube"
+			}
+			new Movie()
+			{
+				ID = 5,
+				Title = "Beauty And The Beast",
+				ReleaseDate = new DateTime (1991, 7, 22)
+				RunningTimeMinutes = 84,
+				Actor = "Robby Benson"
+				}
+        };
+
+        return Ok(movies);
+    }
+}
